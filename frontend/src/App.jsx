@@ -1,9 +1,16 @@
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import AddProjet from "./components/AddProjet";
 
 function App() {
   return (
     <div>
-      <h1>HELLO WORLD</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/add" element={<AddProjet />} />
+      </Routes>
     </div>
   );
 }

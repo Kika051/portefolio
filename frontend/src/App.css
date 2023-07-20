@@ -7,8 +7,165 @@
   font-family: "Roboto";
   src: url(../Fonts/Roboto-Condensed.ttf);
 }
+
 * {
   margin: 0;
   padding: 0;
+}
+
+.home-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.home-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: "Roboto_black";
+}
+
+h1 {
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.button_port {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #0f056b;
+  border-radius: 2rem;
+}
+
+.navbar {
+  background-color: #ffffff;
+  margin: 10px;
+  margin-top: 0;
+  padding: 25px;
+  font-family: "Roboto";
+  border-radius: 2rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #0f056b;
+  text-decoration: underline;
+}
+
+.portfolio-page {
   background-color: #0f056b;
+  min-height: 100vh;
+}
+.projetlist {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Roboto_black";
+}
+
+.projetlist {
+  text-align: center; /* Centre le titre "Liste des projets" */
+}
+
+.project-cards-container {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Deux colonnes avec deux projets par ligne */
+  justify-content: center; /* Centre les projets horizontalement */
+  gap: 2rem; /* Espacement entre les projets */
+  max-width: 80px; /* Vous pouvez ajuster la largeur maximale selon vos préférences */
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.projet-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  width: 10rem;
+  height: 10rem;
+  font-family: "Roboto";
+}
+
+.projet-card h2 {
+  margin: 1rem;
+}
+
+.adminbutt {
+  padding: 1rem;
+  margin: 5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  font-family: "Roboto";
+}
+.formulaire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Roboto";
+}
+.title {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Roboto_black";
+}
+label {
+  margin: 10px;
+  display: flex;
+  text-align: center;
+  display: block;
+}
+@media (max-width: 768px) {
+  img {
+    object-fit: cover;
+    object-position: 70%;
+  }
+  .project-cards-container {
+    grid-template-columns: 1fr; /* Un projet par ligne pour les écrans plus petits */
+    margin-top: 1rem; /* Espacement entre les projets en version mobile */
+    justify-content: center; /* Centre les projets horizontalement en version mobile */
+  }
 }
