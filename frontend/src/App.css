@@ -96,19 +96,16 @@ h1 {
 }
 
 .projetlist {
-  text-align: center; /* Centre le titre "Liste des projets" */
+  text-align: center;
 }
 
 .project-cards-container {
   display: grid;
   text-align: center;
-  grid-template-columns: repeat(
-    2,
-    1fr
-  ); /* Deux colonnes avec deux projets par ligne */
-  justify-content: center; /* Centre les projets horizontalement */
-  gap: 2rem; /* Espacement entre les projets */
-  max-width: 80px; /* Vous pouvez ajuster la largeur maximale selon vos préférences */
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 2rem;
+  max-width: 80px;
   margin: auto;
   margin-top: 2rem;
 }
@@ -128,7 +125,8 @@ h1 {
 
 .adminbutt {
   padding: 1rem;
-  margin: 5rem;
+  margin: 4rem;
+  color: #0f056b;
   margin-bottom: 1rem;
   border-radius: 1rem;
   display: flex;
@@ -158,14 +156,60 @@ label {
   text-align: center;
   display: block;
 }
+
+.Projet {
+  text-align: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: "Roboto";
+}
+
+.Projet h1 {
+  font-family: "Roboto_black";
+}
+
+.Projet label {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin: auto;
+  width: 8rem;
+  border-radius: 2rem;
+  color: #0f056b;
+  white-space: nowrap;
+}
+
+.Projet p {
+  margin: 1rem;
+}
+
+.Projet h1 {
+  margin: 1rem;
+}
+
+.Projet a {
+  color: #ffffff;
+}
+
+.screen {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
 @media (max-width: 768px) {
   img {
     object-fit: cover;
     object-position: 70%;
   }
   .project-cards-container {
-    grid-template-columns: 1fr; /* Un projet par ligne pour les écrans plus petits */
-    margin-top: 1rem; /* Espacement entre les projets en version mobile */
-    justify-content: center; /* Centre les projets horizontalement en version mobile */
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  .screen {
+    width: 80%;
+    max-width: none;
   }
 }

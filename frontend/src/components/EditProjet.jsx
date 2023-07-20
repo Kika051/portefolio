@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Header from "./Header";
 
-function AddProjet() {
+function EditProjet() {
   const [projet, setProjet] = useState({
     title: "",
     screen: "",
@@ -10,6 +11,26 @@ function AddProjet() {
     techno: "",
     description: "",
   });
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(
+      `${
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"
+      }/projets/${id}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setProjet(data);
+      })
+      .catch((error) => {
+        console.error(
+          "Une erreur s'est produite lors de la récupération du projet",
+          error
+        );
+      });
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,9 +53,11 @@ function AddProjet() {
     };
 
     fetch(
-      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"}/projets`,
+      `${
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"
+      }/projets/${id}`,
       {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -43,22 +66,9 @@ function AddProjet() {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Erreur lors de l'ajout du projet");
+          throw new Error("Erreur lors de la mise à jour du projet");
         }
-        return response.json();
-      })
-      .then((data) => {
-        // eslint-disable-next-line no-restricted-syntax
-        console.log("Projet ajouté :", data);
-
-        setProjet({
-          title: "",
-          screen: "",
-          url: "",
-          client: "",
-          techno: "",
-          description: "",
-        });
+        alert("Projet mis à jour avec succès");
       })
       .catch((error) => {
         console.error("Erreur :", error);
@@ -68,7 +78,7 @@ function AddProjet() {
   return (
     <div className="portfolio-page">
       <Header />
-      <h2 className="title">AJOUTER UN PROJET</h2>
+      <h2 className="title">MODIFIER LE PROJET</h2>
       <div className="formulaire">
         <form onSubmit={handleSubmit}>
           <div>
@@ -134,11 +144,11 @@ function AddProjet() {
               required
             />
           </div>
-          <button type="submit">Ajouter</button>
+          <button type="submit">Enregistrer</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default AddProjet;
+export default EditProjet;

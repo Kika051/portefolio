@@ -30,16 +30,21 @@ function ProjetList() {
       <h1 className="projetlist">Liste des projets</h1>
       <div className="project-cards-container">
         {projets.map((projet) => (
-          <div key={projet.id} className="projet-block">
+          <Link
+            to={`/projets/${projet.id}`}
+            key={projet.id}
+            className="projet-block"
+          >
             <div className="projet-card">
               <h2>{projet.title}</h2>
               <p>{projet.description}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
+
       <Link to="/add" className="adminbutt">
-        Ajouté un projet
+        Ajouter un projet
       </Link>
     </div>
   );
