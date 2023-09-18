@@ -76,7 +76,7 @@ function EditProjet() {
   };
 
   return (
-    <div className="portfolio-page">
+    <div>
       <Header />
       <h2 className="title">MODIFIER LE PROJET</h2>
       <div className="formulaire">

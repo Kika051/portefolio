@@ -43,7 +43,7 @@ function ProjetComponents() {
       });
   };
   return (
-    <div className="portfolio-page">
+    <div>
       <Header />
       <div className="Projet">
         <h1>{projet.title}</h1>

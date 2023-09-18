@@ -66,7 +66,7 @@ function AddProjet() {
   };
 
   return (
-    <div className="portfolio-page">
+    <div>
       <Header />
       <h2 className="title">AJOUTER UN PROJET</h2>
       <div className="formulaire">
