@@ -197,6 +197,39 @@ label {
   margin: 1rem;
   border-radius: 1rem;
 }
+.contact {
+  padding: 1rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Roboto";
+}
+
+.form-contact {
+  padding: 1rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Roboto";
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  height: 250px;
+  width: 250px;
+}
+
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills {
+  margin: 0 auto;
+  padding: 3rem;
+  font-family: "Roboto";
+  color: #ffffff;
+}
 
 @media (max-width: 768px) {
   img {
